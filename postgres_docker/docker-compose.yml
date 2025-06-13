@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: agrobloc-db
+    restart: always
+    environment:
+      POSTGRES_DB: agrobloc
+      POSTGRES_USER: agro_user
+      POSTGRES_PASSWORD: agro_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - agrobloc_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - agrobloc-network
+
+volumes:
+  agrobloc_data:
+
+networks:
+  agrobloc-network:
