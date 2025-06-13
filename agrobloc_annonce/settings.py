@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'agrobloc_annonce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'service_annonce',
-        'USER': 'postgres',
-        'PASSWORD': 'cest steve',
+        'NAME': 'annonces_db',
+        'USER': 'agro_user',
+        'PASSWORD': 'agro_pass',
         'HOST': 'localhost',   
-        'PORT': '5432',          
+        'PORT': '5433',          
     }
 }
 
