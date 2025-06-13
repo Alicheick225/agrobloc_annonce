@@ -1,22 +1,22 @@
 services:
-  db:
+  db_annonces:
     image: postgres:15
-    container_name: agrobloc-db
-    restart: always
+    container_name: annonces_db
     environment:
-      POSTGRES_DB: agrobloc
+      POSTGRES_DB: annonces_db
       POSTGRES_USER: agro_user
       POSTGRES_PASSWORD: agro_pass
     ports:
       - "5432:5432"
     volumes:
-      - agrobloc_data:/var/lib/postgresql/data
+      - annonces_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - agrobloc-network
 
 volumes:
-  agrobloc_data:
+  annonces_data:
 
 networks:
   agrobloc-network:
+    name: agrobloc-network
