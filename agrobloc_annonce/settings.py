@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',  # Django REST Framework
+    'annonces',  # Ton app "annonces"
+    'corsheaders',  # Pour gérer les CORS
+    
 ]
 
 MIDDLEWARE = [
@@ -74,10 +79,15 @@ WSGI_APPLICATION = 'agrobloc_annonce.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'service_annonce',
+        'USER': 'postgres',
+        'PASSWORD': 'cest steve',
+        'HOST': 'localhost',   
+        'PORT': '5432',          
     }
 }
+
 
 
 # Password validation
