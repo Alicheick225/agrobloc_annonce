@@ -2,9 +2,12 @@
 CREATE TABLE annonces_vente (
     id UUID PRIMARY KEY,
     user_id UUID NOT NULL,           -- ID du producteur (provenant du service utilisateur)
-    produit_id UUID NOT NULL,        -- ID du produit concerné
+    type_culture_id UUID NOT NULL,   -- Référence à un type de culture
+    parcelle_id UUID NOT NULL,       -- Référence à une parcelle
     prevision BOOLEAN DEFAULT FALSE,
     statut VARCHAR(50) NOT NULL,
+    quantite INTEGER NOT NULL,
+    prix_kg NUMERIC(10, 2) NOT NULL, -- Prix/kg du lot de produit agricole
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP DEFAULT NOW()
 );

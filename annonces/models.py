@@ -36,10 +36,10 @@ class PropositionAchat(models.Model):
 
 
 class Commande(models.Model):
-    id = models.AutoField(primary_key=True)
-    annonce_vente_id = models.IntegerField()  # Clé étrangère mais conservée comme IntegerField vu ta logique actuelle
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    annonce_vente_id = models.UUIDField()  # Clé étrangère mais conservée comme IntegerField vu ta logique actuelle
     statut = models.CharField(max_length=50, default='en attente')
-    acheteur_id = models.IntegerField()
+    acheteur_id = models.UUIDField()
     quantite = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
