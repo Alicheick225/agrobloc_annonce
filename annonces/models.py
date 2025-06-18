@@ -35,12 +35,10 @@ class PropositionAchat(models.Model):
 
 class Commande(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    annonce_vente_id = models.UUIDField()
+    annonce_vente_id = models.UUIDField()  # Clé étrangère mais conservée comme IntegerField vu ta logique actuelle
+    statut = models.CharField(max_length=50, default='en attente')
     acheteur_id = models.UUIDField()
-    quantite = models.IntegerField()
-    statut = models.CharField(max_length=50)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    quantite = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
         return f"Commande #{self.id} - Vente {self.annonce_vente_id} - Acheteur {self.acheteur_id}"
