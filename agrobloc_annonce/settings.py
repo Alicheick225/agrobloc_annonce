@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'annonces_db',
         'USER': 'agro_user',
         'PASSWORD': 'agro_pass',
-        'HOST': 'localhost',   
+        'HOST': '192.168.252.119',   
         'PORT': '5432',          
     }
 }
