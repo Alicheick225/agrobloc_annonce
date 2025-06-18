@@ -24,7 +24,7 @@ CREATE TABLE proposition_achat (
 CREATE TABLE commandes (
     id UUID PRIMARY KEY,
     annonce_vente_id UUID NOT NULL,  -- Référence à une annonce
-    acheteur_id UUID NOT NULL,       -- ID de l’acheteur (depuis le service utilisateur)
+    acheteur_id UUID NOT NULL,       -- ID de l'acheteur (depuis le service utilisateur)
     quantite INTEGER NOT NULL,
     statut VARCHAR(50) NOT NULL,
     created_at TIMESTAMP DEFAULT NOW(),
