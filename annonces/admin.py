@@ -15,4 +15,4 @@ class CommandeAdmin(admin.ModelAdmin):
 
 @admin.register(Candidature)
 class CandidatureAdmin(admin.ModelAdmin):
-    list_display = ('id', 'proposition_achat_id', 'statut', 'date', 'producteur_id')
+    list_display = ['id', 'proposition_achat_id', 'producteur_id', 'statut', 'created_at']  # remplace date par created_at
