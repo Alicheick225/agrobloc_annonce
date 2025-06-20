@@ -9,7 +9,7 @@ CREATE TABLE annonces_vente (
     statut VARCHAR(50) NOT NULL,
     quantite INTEGER NOT NULL,
     prix_kg NUMERIC(10, 2) NOT NULL, -- Prix/kg du lot de produit agricole
-    created_at TIMESTAMP DEFAULT NOW(),
+    created_at TIMESTAMP DEFAULT NOW()
 );
 
 -- Table proposition_achat
@@ -19,7 +19,7 @@ CREATE TABLE proposition_achat (
     type_culture_id UUID NOT NULL,   -- Référence à un type de culture
     quantite INTEGER NOT NULL,
     statut VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP DEFAULT NOW(),
+    created_at TIMESTAMP DEFAULT NOW()
 );
 
 -- Table commandes
@@ -29,7 +29,7 @@ CREATE TABLE commandes (
     user_id UUID NOT NULL,       -- ID de l’acheteur (depuis le service utilisateur)
     quantite INTEGER NOT NULL,
     statut VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP DEFAULT NOW(),
+    created_at TIMESTAMP DEFAULT NOW()
 );
 
 -- Table candidatures
@@ -38,5 +38,5 @@ CREATE TABLE candidatures (
     proposition_achat_id UUID NOT NULL, -- Référence à une proposition d'achat
     user_id UUID NOT NULL,        -- ID du producteur (depuis le service utilisateur)
     statut VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP DEFAULT NOW(),
+    created_at TIMESTAMP DEFAULT NOW()
 );
