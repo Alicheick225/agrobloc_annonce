@@ -1,4 +1,7 @@
-from rest_framework import generics
+from rest_framework import generics, viewsets
+from annonces.models import AnnonceVente, PropositionAchat
+
+from annonces.serializers import AnnonceVenteSerializer, PropositionAchatSerializer
 from .models import AnnonceVente, PropositionAchat, Commande, Candidature
 from .serializers import (
     AnnonceVenteSerializer,
@@ -6,6 +9,7 @@ from .serializers import (
     CommandeSerializer,
     CandidatureSerializer,
 )
+
 
 # --- AnnonceVente ---
 
@@ -46,7 +50,7 @@ class AnnonceVenteDelete(generics.DestroyAPIView):
 class PropositionAchatList(generics.ListAPIView):
     queryset = PropositionAchat.objects.all()
     serializer_class = PropositionAchatSerializer
-
+    
 class PropositionAchatCreate(generics.CreateAPIView):
     queryset = PropositionAchat.objects.all()
     serializer_class = PropositionAchatSerializer

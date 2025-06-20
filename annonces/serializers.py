@@ -6,7 +6,8 @@ class AnnonceVenteSerializer(serializers.ModelSerializer):
     class Meta:
         model = AnnonceVente
         fields = '__all__'
-
+        
+        
     def validate(self, data):
         if data.get('prevision') and data.get('statut') != 'prévision':
             raise serializers.ValidationError({
@@ -28,12 +29,10 @@ class PropositionAchatSerializer(serializers.ModelSerializer):
         model = PropositionAchat
         fields = '__all__'
 
-
 class CommandeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Commande
         fields = '__all__'
-
 
 class CandidatureSerializer(serializers.ModelSerializer):
     class Meta:
